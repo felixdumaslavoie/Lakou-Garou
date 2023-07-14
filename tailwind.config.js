@@ -1,10 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './output/index.html'
+    './output/index.html',
+    './output/zpages/*'
   ],
   theme: {
-    extend: {},
+
+    
+  
   },
   plugins: [],
 }

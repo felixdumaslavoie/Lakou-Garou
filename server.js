@@ -24,8 +24,16 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/output/index.html');
 });
 
+app.get('/register', (req, res) => {
+    res.sendFile(__dirname + '/output/zpages/register.html');
+});
+
 io.on('connection', (socket) => {
     console.log('a user connected');
+
+
+    // Si il est déjà connecté on le redirige vers la page game
+
 
     data = {}
 
@@ -48,6 +56,7 @@ io.on('connection', (socket) => {
         if (accepted)
         {
             console.log("accepted!!")
+            socket.emit("loggedin", )
         }
         console.log(usersDB)
       })
