@@ -1,4 +1,4 @@
-div.grid.h-screen.place-items-center
+div.grid.h-screen.place-items-center.relative.z-10
   .w-full.max-w-xs
     form.bg-white.shadow-md.rounded.px-8.pt-6.pb-8.mb-4
       .mb-4
@@ -11,9 +11,21 @@ div.grid.h-screen.place-items-center
         input#password.shadow.appearance-none.border.border-red-500.rounded.w-full.py-2.px-3.text-gray-700.mb-3.leading-tight(class='focus:outline-none focus:shadow-outline' type='password' placeholder='******************')
         p.text-red-500.text-xs.italic SVP entrez votre mot de passe.
       .flex.items-center.justify-between
-        button.bg-blue-500.text-white.font-bold.py-2.px-4.rounded(class='hover:bg-blue-700 focus:outline-none focus:shadow-outline' type='button' onclick='sendConnectionData()')
+        button#myBtn.bg-blue-500.text-white.font-bold.py-2.px-4.rounded(class='hover:bg-blue-700 focus:outline-none focus:shadow-outline' type='button' onclick='sendConnectionData()')
           | Se connecter
         a.inline-block.align-baseline.font-bold.text-sm.text-blue-500(class='hover:text-blue-800' href='/register')
           | Créer un compte?
     p.text-center.text-gray-500.text-xs
-      | &copy;2023 Lakou productions. All rights reserved. 
+      | &copy;2023 Lakou productions. All rights reserved.
+    script.
+      // Adding a trigger to login fi the user presses enter after typing in the password field
+      let input = document.getElementById("password");
+      input.addEventListener("keypress", function(event) {
+      // If the user presses the "Enter" key on the keyboard
+      if (event.key === "Enter") {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      document.getElementById("myBtn").click();
+        }
+      }); 

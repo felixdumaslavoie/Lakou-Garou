@@ -1,0 +1,10 @@
+include ../ztemplates/head.pug
+section.welcome 
+    div.w-full.h-screen.bg-center.bg-cover(style="Background-image: url('assets/img/menu/Menu 1.jpg')")
+    div 
+        button.absolute.left-64.top-72.animate-pulse.setFont_HelpMe.text-4xl(onclick="testa()") Jouer 
+            script.
+                function testa()
+                {
+                    console.log("Okiiie")
+                }

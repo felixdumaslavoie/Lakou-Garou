@@ -1,3 +1,11 @@
 include ztemplates/head.pug
 body
   include ztemplates/login.pug
+  section.loadingScreen 
+    div#loadingImage.top-0.absolute.w-full.h-screen.bg-center.bg-cover(style="Background-image: url('assets/img/menu/Loading screen.jpg')")
+  script.
+      var element = document.getElementById("loadingImage");
+      if (element)
+      {
+        element.classList.add("visible");
+      }

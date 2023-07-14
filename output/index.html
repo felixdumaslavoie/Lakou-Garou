@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <style type="text/css"></style>
     <script src="js/libs/socket.io.min.js" defer></script>
     <script src="js/parts/redirect.js" defer></script>
@@ -14,7 +13,7 @@
   </head>
 </html>
 <body>
-  <div class="grid h-screen place-items-center">
+  <div class="grid h-screen place-items-center relative z-10">
     <div class="w-full max-w-xs">
       <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div class="mb-4">
@@ -27,10 +26,33 @@
           <p class="text-red-500 text-xs italic">SVP entrez votre mot de passe.</p>
         </div>
         <div class="flex items-center justify-between">
-          <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="button" onclick="sendConnectionData()">Se connecter</button><a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/register">Créer un compte?</a>
+          <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline" id="myBtn" type="button" onclick="sendConnectionData()">Se connecter</button><a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/register">Créer un compte?</a>
         </div>
       </form>
-      <p class="text-center text-gray-500 text-xs">&copy;2023 Lakou productions. All rights reserved. </p>
+      <p class="text-center text-gray-500 text-xs">&copy;2023 Lakou productions. All rights reserved.</p>
+      <script>
+        // Adding a trigger to login fi the user presses enter after typing in the password field
+        let input = document.getElementById("password");
+        input.addEventListener("keypress", function(event) {
+        // If the user presses the "Enter" key on the keyboard
+        if (event.key === "Enter") {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.getElementById("myBtn").click();
+          }
+        }); 
+      </script>
     </div>
   </div>
+  <section class="loadingScreen"> 
+    <div class="top-0 absolute w-full h-screen bg-center bg-cover" id="loadingImage" style="Background-image: url('assets/img/menu/Loading screen.jpg')"></div>
+  </section>
+  <script>
+    var element = document.getElementById("loadingImage");
+    if (element)
+    {
+      element.classList.add("visible");
+    }
+  </script>
 </body>

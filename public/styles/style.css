@@ -476,6 +476,27 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.visible {
+  visibility: visible;
+}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.left-64 {
+  left: 16rem;
+}
+.top-0 {
+  top: 0px;
+}
+.top-72 {
+  top: 18rem;
+}
+.z-10 {
+  z-index: 10;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -533,6 +554,15 @@ video {
 }
 .max-w-xs {
   max-width: 20rem;
+}
+@keyframes pulse {
+
+  50% {
+    opacity: .5;
+  }
+}
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 .appearance-none {
   -webkit-appearance: none;
@@ -654,6 +684,10 @@ video {
   font-size: 1.5rem;
   line-height: 2rem;
 }
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -735,6 +769,20 @@ video {
     font-family: "HelpMe";
     src: url('../assets/font/HelpMe.woff2') format('woff2')
   }
+
+
+/*FADE OUT */
+.hidden {
+visibility: hidden;
+opacity: 0;
+transition: visibility 0s 2s, opacity 2s linear;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s 2s, opacity 2s linear;  
+}
 
 .hover\:bg-blue-700:hover {
   --tw-bg-opacity: 1;

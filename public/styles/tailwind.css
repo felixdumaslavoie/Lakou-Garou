@@ -15,3 +15,17 @@
     font-family: "HelpMe";
     src: url('../assets/font/HelpMe.woff2') format('woff2')
   }
+
+
+/*FADE OUT */
+.hidden {
+visibility: hidden;
+opacity: 0;
+transition: visibility 0s 2s, opacity 2s linear;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s 2s, opacity 2s linear;  
+}

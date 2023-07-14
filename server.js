@@ -15,6 +15,9 @@ const server = http.createServer(app);
         res.sendFile(__dirname + '/output/zpages/register.html');
     });
 
+    app.get('/lobby', (req, res) => {
+        res.sendFile(__dirname + '/output/zpages/lobby.html');
+    });
 
     app.get('/game', (req, res) => {
         res.sendFile(__dirname + '/output/zpages/game.html');
@@ -80,7 +83,7 @@ function getUserID(socketData) {
 function login(socket)
 {
     console.log("login")
-    let redirection = { "url": "/game"}
+    let redirection = { "url": "/lobby"}
     socket.emit("redirectTo", redirection)
 }
 
