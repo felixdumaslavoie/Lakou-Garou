@@ -6,3 +6,12 @@
 .bg-primary-600 {
     background-color: blue;
 }
+
+.setFont_HelpMe {
+    font-family: 'HelpMe';
+}
+
+@font-face {
+    font-family: "HelpMe";
+    src: url('../assets/font/HelpMe.woff2') format('woff2')
+  }
