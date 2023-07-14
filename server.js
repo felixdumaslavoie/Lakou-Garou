@@ -9,6 +9,13 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 
+// fs
+const fs = require("fs");
+
+var connections = {}
+
+let usersDB = JSON.parse(fs.readFileSync('./data/players.json'));
+
 
 
 app.use(express.static(__dirname + '/public'));
@@ -27,8 +34,29 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         console.log('user disconnected');
       });
+
+      socket.on('login', (data) => {
+        let accepted = false;
+
+        usersDB.forEach((user) => {
+        
+        if (data.username == user.username  &&  data.password == user.password)
+        {
+            accepted = true;
+        }})
+
+        if (accepted)
+        {
+            console.log("accepted!!")
+        }
+        console.log(usersDB)
+      })
 });
   
+
+
 server.listen(3000, () => {
     console.log('listening on *:3000');
 });
+
+
