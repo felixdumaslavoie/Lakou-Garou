@@ -2,9 +2,22 @@ include ../ztemplates/head.pug
 section.welcome 
     div.w-full.h-screen.bg-center.bg-contain.bg-no-repeat(style="Background-image: url('assets/img/menu/Menu 1.jpg')")
         div 
-            button.absolute.left-64.top-72.animate-pulse.setFont_HelpMe.text-4xl(onclick="testa()") Jouer 
+            button#boutonJouer.absolute.left-40.top-52.animate-pulse.setFont_HelpMe.text-4xl.p-4.shadow-lg(onclick="showLobbySelector()") Jouer 
                 script.
-                    function testa()
-                    {
-                        console.log("Okiiie")
+                    let showLobbySelector = () => {
+                        document.getElementById('boutonJouer').classList.add("hidden")
+                        document.getElementById('menuChoix1Lobby').classList.toggle("hidden")
+                    }
+        div#menuChoix1Lobby.hidden.absolute.flex.flex-col.left-44.top-28
+            button#boutonHeberger.animate-pulse.setFont_HelpMe.text-4xl.p-4.shadow-lg(onclick="showLobbySelector()") Heberger 
+            button#boutonRejoindre.animate-pulse.setFont_HelpMe.text-4xl.p-4.shadow-lg(onclick="showLobbySelector()") Rejoindre
+            button#boutonRetour.animate-pulse.setFont_HelpMe.text-4xl.p-4.shadow-lg(onclick="scriptBoutonRetour()") Retour 
+                script.
+                    let scriptBoutonHeberger = () => {
+                        document.getElementById('menuChoix1Lobby').classList.toggle("hidden")
+                    }
+
+                    let scriptBoutonRetour = () => {
+                        document.getElementById('menuChoix1Lobby').classList.toggle("hidden")
+                        document.getElementById('boutonJouer').classList.remove("hidden")
                     }

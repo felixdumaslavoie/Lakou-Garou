@@ -27,11 +27,27 @@
 <section class="welcome"> 
   <div class="w-full h-screen bg-center bg-contain bg-no-repeat" style="Background-image: url('assets/img/menu/Menu 1.jpg')">
     <div> 
-      <button class="absolute left-64 top-72 animate-pulse setFont_HelpMe text-4xl" onclick="testa()">Jouer 
+      <button class="absolute left-40 top-52 animate-pulse setFont_HelpMe text-4xl p-4 shadow-lg" id="boutonJouer" onclick="showLobbySelector()">Jouer 
         <script>
-          function testa()
-          {
-              console.log("Okiiie")
+          let showLobbySelector = () => {
+              document.getElementById('boutonJouer').classList.add("hidden")
+              document.getElementById('menuChoix1Lobby').classList.toggle("hidden")
+          }
+        </script>
+      </button>
+    </div>
+    <div class="hidden absolute flex flex-col left-44 top-28" id="menuChoix1Lobby">
+      <button class="animate-pulse setFont_HelpMe text-4xl p-4 shadow-lg" id="boutonHeberger" onclick="showLobbySelector()">Heberger </button>
+      <button class="animate-pulse setFont_HelpMe text-4xl p-4 shadow-lg" id="boutonRejoindre" onclick="showLobbySelector()">Rejoindre</button>
+      <button class="animate-pulse setFont_HelpMe text-4xl p-4 shadow-lg" id="boutonRetour" onclick="scriptBoutonRetour()">Retour 
+        <script>
+          let scriptBoutonHeberger = () => {
+              document.getElementById('menuChoix1Lobby').classList.toggle("hidden")
+          }
+          
+          let scriptBoutonRetour = () => {
+              document.getElementById('menuChoix1Lobby').classList.toggle("hidden")
+              document.getElementById('boutonJouer').classList.remove("hidden")
           }
         </script>
       </button>

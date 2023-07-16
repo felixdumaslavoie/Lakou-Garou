@@ -30,6 +30,8 @@ transition: visibility 0s 2s, opacity 2s linear;
     transition: visibility 0s 2s, opacity 2s linear;  
 }
 
+/* Fullscreen test*/
+
 #container:fullscreen {
 	width: 100%;
 	height: 100%;
