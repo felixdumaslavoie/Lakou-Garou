@@ -1,31 +1,8 @@
 
-// Express
-const express = require('express');
-const app = express();
-const http = require('http');
-const server = http.createServer(app);
+var webServer = require("./zzModules/webServer")
 
-    app.use(express.static(__dirname + '/public'));
 
-    app.get('/', (req, res) => {
-        res.sendFile(__dirname + '/output/index.html');
-    });
-
-    app.get('/register', (req, res) => {
-        res.sendFile(__dirname + '/output/zpages/register.html');
-    });
-
-    app.get('/lobby', (req, res) => {
-        res.sendFile(__dirname + '/output/zpages/lobby.html');
-    });
-
-    app.get('/game', (req, res) => {
-        res.sendFile(__dirname + '/output/zpages/game.html');
-    });
-
-    server.listen(3000, () => {
-        console.log('listening on *:3000');
-    });
+const server = webServer(__dirname);
 
 
 // Socket io

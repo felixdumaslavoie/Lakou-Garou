@@ -8,7 +8,8 @@ function socketEvents(socket)
     
         console.log("CONNECTION MADE!!")
 
-
+        let id = "rHinXiaPHnw1qo2w9pbG5MVZDSdIlame0OeiMjgxh2WZbdaewP4xY3S5zQYuzCtUt1ShR6g2JAXWFP1m94nqNnpzkhQq2pWz6QnR"
+        socket.emit("connectionID", {"id": id} )
     });
 
     socket.on('getSessionID', () => {

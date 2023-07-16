@@ -1,3 +1,5 @@
+// Devrait être renommé pour login.js
+
 console.log("HELLO!")
 
 var ipAddress = "localhost"
